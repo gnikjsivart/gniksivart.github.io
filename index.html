@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Builder</title>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .column {
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .container {
+	display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+
+
+
+
+
+<div id="page1">
+    <h2>Introduction</h2>
+
+		<button id="continueButton">Continue</button>
+	<p>
+        	In a world where legends are born from grand deeds or heroic exploits, there lies a tale of a stick figure unlike any other. This isn't the story of a mighty warrior or a villain savior, 
+		but the chronicle of an unlikely individual stumbling through a world of peril and possibility.
+        	Meet Stickley, he doesn't possess chiseled muscles or a shining suit of armor. Stickley is just your average, everyday individual, living a mundane existence in a world teeming with magic, monsters, and mayhem.
+        	Our tale begins in the quaint village of Doodleville, where Stickley resides. Life in Doodleville is peaceful, but beneath the surface, dark forces stir. Under the surface, 
+		the village is plagued by mysterious disappearances, and whispers of an ancient evil echo through back alleys and sewers.
+        	Despite the danger that is bubbling beneath the surface, Stickley is content with the simple life. He spends his reading epic novels and his nights gazing at the stars, 
+		dreaming of adventure but never daring to seek it out.
+        	But fate has other plans. One fateful night, a band of evil villains descends upon Doodleville, wreaking havoc, destruction, and chaos in their wake. In the midst of the chaos, 
+		Stickley finds himself thrust into the role of the reluctant hero, forced to confront the darkness that threatens to consume his home.
+        	As the commotion approaches Stickley's house and the noise from the villains gets closer and closer, he begins to feel the courage that he initially felt begin to leave him and 
+		decides the make a quit escape out his back door and continue on the trail leaving his home and city behind to head off into the plains and forest just outside of Doodleville.
+ 		Will Stickley overcome his fear to discover new abilities to become the hero the world needs? Or will he succumb to the power that he feels he has and embrace the darkness, unleashing chaos upon the land?
+	</p>
+</div>
+
+<div id="page2" class="hidden">
+	<div class ="container">
+	<div class="column">
+
+    <h2>Hero Builder Game</h2>
+<p>
+        <button id="adventureButton" class="button">Go Adventure! - <span id="clickValue">1</span> Exp</button>
+        Experience Points: <span id="experience" class="resource">0</span>
+    </p>
+    <p>
+        <button id="buyAdventureUpgrade" class="button">Adventure Upgrade! - Cost: <span id="adventureUpgradeCost">3</span> Exp</button>
+        Adventure Upgrades Purchased: <span id="adventureUpgradesPurchased">0</span>
+    </p>
+    <p>
+        <button id="buyPassiveUpgrade" class="button">Passive Adventuring! - Cost: <span id="passiveUpgradeCost">5</span> Exp</button>
+        Passive Adventuring Purchased: <span id="passiveUpgradesPurchased">0</span>
+    </p>
+    <p>
+        <button id="buyLevelUp" class="button">Level Up (Cost: 10 Exp)</button>
+    </p>
+
+    <p> 
+        <button id="encounter1Button" class="button" style="display: none;"> Encounter Hitchhiker </button>
+        <button id="encounter2Button" class="button" style="display: none;"> Encounter 2 </button>
+        <button id="encounter3Button" class="button" style="display: none;"> Encounter 3 </button>
+        <button id="encounter4Button" class="button" style="display: none;"> Encounter 4 </button>
+        <button id="encounter5Button" class="button" style="display: none;"> Encounter 5 </button>
+        <button id="encounter6Button" class="button" style="display: none;"> Encounter 6 </button>
+        <button id="encounter7Button" class="button" style="display: none;"> Encounter 7 </button>
+        <button id="encounter8Button" class="button" style="display: none;"> Encounter 8 </button>
+        <button id="encounter9Button" class="button" style="display: none;"> Encounter 9 </button>
+        <button id="encounter10Button" class="button" style="display: none;"> Encounter 10 </button>
+        <button id="encounter11Button" class="button" style="display: none;"> Encounter 11 </button>
+        <button id="encounter12Button" class="button" style="display: none;"> Encounter 12 </button>
+        <button id="encounter13Button" class="button" style="display: none;"> Encounter 13 </button>
+        <button id="encounter14Button" class="button" style="display: none;"> Encounter 14 </button>
+        <button id="encounter15Button" class="button" style="display: none;"> Encounter 15 </button>
+        <button id="encounter16Button" class="button" style="display: none;"> Encounter 16 </button>
+        <button id="encounter17Button" class="button" style="display: none;"> Encounter 17 </button>
+        <button id="encounter18Button" class="button" style="display: none;"> Encounter 18 </button>
+        <button id="encounter19Button" class="button" style="display: none;"> Encounter 19 </button>
+        <button id="encounter20Button" class="button" style="display: none;"> Encounter 20 </button>
+    </p>
+
+    <h1>Inventory</h1>
+    <p>Helmet:
+        <select id="selectHelmet" class="button">
+            <option value="None">No Helmet</option>
+            <option value="Cloth Helmet">Cloth Helmet</option>
+            <option value="Leather Helmet">Leather Helmet</option>
+            <option value="Iron Helmet">Iron Helmet</option>
+        </select><br>
+    Necklace:
+        <select id="selectNecklace" class="button">
+            <option value="None">No Necklace</option>
+            <option value="Bronze Necklace">Bronze Necklace</option>
+            <option value="Silver Necklace">Silver Necklace</option>
+            <option value="Gold Necklace">Gold Necklace</option>
+        </select><br>
+    Chest:
+        <select id="selectChest" class="button">
+            <option value="None">No Armor</option>
+            <option value="Cloth Chest">Cloth Armor</option>
+            <option value="Leather Chest">Leather Armor</option>
+            <option value="Iron Chest">Iron Armor</option>
+        </select><br>
+    Gloves:
+        <select id="selectGloves" class="button">
+            <option value="None">No Gloves</option>
+            <option value="Cloth Gloves">Cloth Gloves</option>
+            <option value="Leather Gloves">Leather Gloves</option>
+            <option value="Iron Gloves">Iron Gloves</option>
+        </select><br>
+    Ring:
+        <select id="selectRing" class="button">
+            <option value="None">No Ring</option>
+            <option value="Bronze Ring">Bronze Ring</option>
+            <option value="Silver Ring">Silver Ring</option>
+            <option value="Gold Ring">Gold Ring</option>
+        </select><br>
+    Legs:
+        <select id="selectLegs" class="button">
+            <option value="None">No Legs</option>
+            <option value="Cloth Legs">Cloth Legs</option>
+            <option value="Leather Legs">Leather Legs</option>
+            <option value="Iron Legs">Iron Legs</option>
+        </select><br>
+    Boots:
+        <select id="selectBoots" class="button">
+            <option value="None">No Boots</option>
+            <option value="Cloth Boots">Cloth Boots</option>
+            <option value="Leather Boots">Leather Boots</option>
+            <option value="Iron Boots">Iron Boots</option>
+        </select><br>
+    Weapon 1:
+        <select id="selectWeapon1" class="button">
+            <option value="None">No Weapon 1</option>
+            <option value="Wooden Sword">Wooden Sword</option>
+            <option value="Iron Sword">Iron Sword</option>
+            <option value="Steel Sword">Steel Sword</option>
+        </select><br>
+    Weapon 2:
+        <select id="selectWeapon2" class="button">
+            <option value="None">No Weapon 2</option>
+            <option value="Wooden Shield">Wooden Shield</option>
+            <option value="Iron Shield">Iron Shield</option>
+            <option value="Steel Shield">Steel Shield</option>
+        </select>
+    </p>
+</div>
+
+<div class="column">
+    <h1>Hero Stats</h1>
+    <p>Helmet:<br>
+    Necklace:<br>
+    Chest:<br>
+    Gloves:<br>
+    Ring:<br>
+    Legs:<br>
+    Boots:<br>
+    Weapon 1:<br>
+    Weapon 2:</p>
+
+    <p>Level: <span id="level" class="resource">0</span></p>
+    <p>Good Points: <span id="goodPoints" class="resource">0</span><br>
+       Bad Points: <span id="badPoints" class="resource">0</span></p>
+    <ul>
+        <li>Gold = <span id="gold">0</span></li>
+        <li>Strength = <span id="strength">0</span></li>
+        <li>Health = <span id="health">0</span></li>
+        <li>Stamina = <span id="stamina">0</span></li>
+        <li>Speed = <span id="speed">0</span></li>
+        <li>Agility = <span id="agility">0</span></li>
+        <li>Luck = <span id="luck">0</span></li>
+    </ul>
+</div>
+
+<div class="column">
+
+
+    <h1>Village Stats</h1>
+
+    <p>
+        <button id="woodButton" class="button">Gather Wood! - <span id="woodValue">+1</span> Wood</button>
+        Experience Points: <span id="wood" class="resource">0</span>
+    </p>
+    <p>
+        <button id="buyWoodUpgrade" class="button">Wood Upgrade! - Cost: <span id="woodUpgradeCost">3</span> Wood</button>
+        Wood Upgrades Purchased: <span id="woodUpgradesPurchased">0</span>
+    </p>
+    <p>
+        <button id="buyWoodPassiveUpgrade" class="button">Passive Wooding! - Cost: <span id="woodPassiveUpgradeCost">5</span> Wood</button>
+        Passive Wooding Purchased: <span id="woodPassiveUpgradesPurchased">0</span>
+    </p>
+
+	</div>
+</div>	
+</div>
+
+<div id="page3" class="hidden">
+    <h2>Hitch Hiker</h2>
+
+	<p>
+		As Stickley flees from the chaos consuming Doodleville, he finds himself wandering along the dusty road that winds its way through the countryside. The night air is thick with tension, and Stickley's heart pounds in his chest with each step he takes. He knows he cannot simply run from the darkness forever, but he also struggles to find the courage to confront it head-on.
+
+		As he trudges along the road, Stickley spots a figure up ahead, thumb outstretched, signaling for a ride. It's a hitchhiker, a traveler perhaps, or maybe something more. Stickley hesitates, torn between the instinct to keep moving and the nagging curiosity about this stranger.
+
+		Approaching the hitchhiker, Stickley sees that the figure is cloaked in shadow, features obscured by the dim moonlight. A sense of unease prickles at the back of Stickley's mind, but he pushes it aside, reminding himself that not all shadows harbor darkness.
+
+		The hitchhiker speaks, voice soft yet commanding, offering Stickley two diverging paths.
+
+		"Brave soul," the hitchhiker begins, "you stand at a crossroads, where choices shape destinies. Ahead lies a fork in the road, each path leading to a different fate."
+
+		Stickley's pulse quickens as he listens, his mind racing with uncertainty.
+
+		"One path," continues the hitchhiker, "promises safety and security, a refuge from the storm that rages within and without. But tread carefully, for safety often comes at a cost."
+
+		Stickley's gaze flickers to the first path, its allure undeniable yet tinged with a hint of apprehension.
+
+		"The other path," intones the hitchhiker, voice growing darker, "offers power and prestige, the chance to seize control and shape the world to your will. Yet beware, for power corrupts, and the price of ambition may be higher than you can imagine."
+
+		Stickley's eyes widen at the mention of power, the temptation like a flame licking at his resolve.
+
+		With a heavy heart and a mind filled with doubt, Stickley stands at the crossroads, torn between the path of safety and the path of power. Little does he know, his choice will set him on a journey of self-discovery, where the line between good and evil blurs, and the true test of courage awaits.
+	</p>
+
+	<button id="buttonC">Good 1 Button</button>
+	<button id="buttonD">Bad 1 Button</button>
+</div>
+
+<script>
+	const experienceDisplay = document.getElementById("experience");
+const adventureButton = document.getElementById("adventureButton");
+const clickValueDisplay = document.getElementById("clickValue");
+const buyAdventureUpgradeButton = document.getElementById("buyAdventureUpgrade");
+const adventureUpgradeCostDisplay = document.getElementById("adventureUpgradeCost");
+const adventureUpgradesPurchasedDisplay = document.getElementById("adventureUpgradesPurchased");
+const buyPassiveUpgradeButton = document.getElementById("buyPassiveUpgrade");
+const passiveUpgradeCostDisplay = document.getElementById("passiveUpgradeCost");
+const passiveUpgradesPurchasedDisplay = document.getElementById("passiveUpgradesPurchased");
+const levelDisplay = document.getElementById("level");
+const buyLevelUpButton = document.getElementById("buyLevelUp");
+const encounter1Button = document.getElementById("encounter1Button");
+    var goodPointsDisplay = document.getElementById("goodPoints");
+    var badPointsDisplay = document.getElementById("badPoints");
+
+let experiencePoints = 0;
+let clickValue = 1;
+let adventureUpgradeCost = 3;
+let adventureUpgradesPurchased = 0;
+let passiveUpgradeCost = 5;
+let passiveUpgradesPurchased = 0;
+let autoIncrementInterval;
+let level = 0;
+let initialStats;
+let goodPoints = 0;
+let badPoints = 0;
+
+function initializeInitialStats() {
+    const initialStats = {
+        strength: getRandomNumber(0, 5),
+        health: getRandomNumber(0, 5),
+        stamina: getRandomNumber(0, 10),
+        speed: getRandomNumber(0, 3),
+        agility: getRandomNumber(0, 5),
+        luck: getRandomNumber(0, 2),
+    };
+    return initialStats;
+}
+
+window.onload = function() {
+    initialStats = initializeInitialStats();
+    Object.keys(initialStats).forEach(function(key) {
+        document.getElementById(key).textContent = initialStats[key];   
+    });
+}
+
+function updateUI() {
+    experienceDisplay.textContent = experiencePoints;
+    clickValueDisplay.textContent = clickValue;
+    adventureUpgradesPurchasedDisplay.textContent = adventureUpgradesPurchased;
+    adventureUpgradeCostDisplay.textContent = adventureUpgradeCost;
+    passiveUpgradesPurchasedDisplay.textContent = passiveUpgradesPurchased;
+    passiveUpgradeCostDisplay.textContent = passiveUpgradeCost;
+    levelDisplay.textContent = level;
+        goodPointsDisplay.textContent = goodPoints;
+        badPointsDisplay.textContent = badPoints;
+}
+
+function handleClick() {
+    experiencePoints += clickValue;
+    updateUI();
+}
+
+function buyAdventureUpgrade() {
+    if (experiencePoints >= adventureUpgradeCost) {
+        experiencePoints -= adventureUpgradeCost;
+        clickValue++;
+        adventureUpgradesPurchased++;
+        adventureUpgradeCost++;
+        updateUI();
+    }
+}
+
+function buyPassiveUpgrade() {
+    if (experiencePoints >= passiveUpgradeCost) {
+        experiencePoints -= passiveUpgradeCost;
+        passiveUpgradesPurchased++;
+        passiveUpgradeCost++;
+        updateUI();
+    }
+}
+
+function autoIncrementExperience() {
+    autoIncrementInterval = setInterval(function() {
+        experiencePoints += passiveUpgradesPurchased;
+        updateUI();
+    }, 1000);
+}
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function levelUpStats() {
+    const statKeys = ['strength', 'health', 'stamina', 'speed', 'agility', 'luck'];
+    statKeys.forEach(function(key) {
+        const statSpan = document.getElementById(key);
+        statSpan.textContent = parseInt(statSpan.textContent) + getRandomNumber(0, 3);
+    });
+}
+
+function buyLevelUp() {
+    if (experiencePoints >= 10) {
+        experiencePoints -= 10;
+        level++;
+        levelUpStats();
+        updateEncounter1ButtonVisibility();
+        updateUI();
+    }
+}
+
+function updateEncounter1ButtonVisibility() {
+    if (level >= 1 && goodPoints + badPoints < 1) {
+        encounter1Button.style.display = "inline-block";
+    } else {
+        encounter1Button.style.display = "none";
+    }
+}
+
+adventureButton.addEventListener("click", handleClick);
+buyAdventureUpgradeButton.addEventListener("click", buyAdventureUpgrade);
+buyPassiveUpgradeButton.addEventListener("click", function() {
+    buyPassiveUpgrade();
+    if (!autoIncrementInterval) {
+        autoIncrementExperience();
+    }
+});
+buyLevelUpButton.addEventListener("click", buyLevelUp);
+
+document.getElementById("continueButton").addEventListener("click", function() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+    document.getElementById("page3").style.display = "none";
+});
+
+document.getElementById("encounter1Button").addEventListener("click", function() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page3").style.display = "block";
+});
+
+document.getElementById("buttonC").addEventListener("click", function() {
+    goodPoints++; // Increment the global variable goodPoints by 1
+    updateUI(); // Add this line to update the UI including goodPoints on page load
+    updateEncounter1ButtonVisibility();
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+    document.getElementById("page3").style.display = "none";
+});
+
+document.getElementById("buttonD").addEventListener("click", function() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+    document.getElementById("page3").style.display = "none";
+});
+
+
+</script>
+
+</body>
+</html>
